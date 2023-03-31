@@ -1,24 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import { BarChartByCountry } from './Components/BarChartByCountry';
+import { PieChartByMaker } from './Components/PieChartByMaker';
+import { CarAgePieChart } from './Components/CarAgePieChart';
+import { VirtualizedList } from './Components/VirtualizedList';
+import { CarList } from './Components/CarList';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<BarChartByCountry/>}/>
+        <Route path='/PieChartByMaker' element={<PieChartByMaker/>}/>
+        <Route path='/CarAgePieChart' element={<CarAgePieChart/>}/>
+        <Route path='/VirtualizedList' element={<VirtualizedList/>} />
+        <Route path='/CarList' element={<CarList/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
